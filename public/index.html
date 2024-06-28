@@ -8,6 +8,8 @@
   <title>Febiola Angelina</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/output/css/galery.css">
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -16,7 +18,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: -webkit-linear-gradient(left, #53c68a, #8b67c4);
+  /* background: -webkit-linear-gradient(left, #53c68a, #8b67c4); */
 }
 .wrapper .card{
   background: #fff;
@@ -91,14 +93,14 @@
   }
 }
 
+
+
   </style>
 </head>
 <body class="bg-white">
-   <!-- navbar -->
-   <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"> -->
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Febiola Angelina</span>
       </a>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -130,11 +132,11 @@
         <button id="hamburger-button" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
         </button>
       </div>
-      <div class="items-center justify-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <div class="items-center justify-center w-full md:flex md:w-auto md:order-1 hidden" id="navbar-sticky">
         <ul class="md:mr-24 flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
@@ -152,15 +154,16 @@
       </div>
     </div>
   </nav>
+  
   <!-- end of navbar -->
   <!-- Home section start -->
   <section id="home" class="pt-36 overflow-hidden dark:bg-gray-900">
     <div class="container mx-auto  dark:bg-gray-900">
       <div class="flex flex-wrap">
         <!-- Kolom Teks -->
-        <div class="w-full lg:w-1/2 px-4 self-center text-center lg:text-left lg:pl-20 mb-20 sm:mb-0">
-          <h1 class="font-semibold md:text-xl mb-3 dark:text-white">Hi! I'm<span class="block text-dark font-bold text-3xl sm:text-4xl lg:text-5xl dark:text-white">Febiola Angelina</span></h1>
-          <h2 class="font-medium text-slate-500 mb-5 text-lg lg:text-2xl dark:text-slate-200">Student & <span class="">Web Developer</span></h2>
+        <div class="w-full lg:w-1/2 px-4 self-center text-center lg:text-left lg:pl-20 mb-20 sm:mb-0" >
+          <h1 class="font-semibold md:text-xl mb-3 dark:text-white">Hi! I'm<span class="block text-dark font-bold text-3xl sm:text-4xl lg:text-5xl dark:text-white" data-aos="fade-right">Febiola Angelina</span></h1>
+          <h2 class="font-medium text-slate-500 mb-5 text-lg lg:text-2xl dark:text-slate-200">Student & <span class="">General Worker</span></h2>
           <p class="font-medium text-slate-400 leading-relaxed mb-10 dark:text-slate-300">The struggle you're in today is developing the strength you need for tomorrow</p>
           <a href="#contact" class="text-white bg-slate-700 px-6 py-3 font-semibold text-base rounded-full border-solid border-2 border-slate-700 hover:border-solid hover:bg-transparent hover:text-dark hover:border-dark hover:border-2 transition-all duration-200 dark:bg-white dark:text-gray-900 dark:border-white dark:hover:bg-transparent dark:hover:text-white">Hubungi Saya</a>
         </div>
@@ -244,11 +247,10 @@
     <!-- Navbar -->
   <!-- Navbar -->
 <nav class="w-full bg-gray-100 p-4 shadow-md">
-  <div class="container mx-auto flex justify-around space-x-4">
-      <a href="#section1" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The origin</a>
-      <a href="#section2" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The milestone</a>
-      <a href="#section3" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The acquisitions</a>
-      <a href="#section4" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The IPO</a>
+  <div class="container mx-auto flex justify-center space-x-4">
+      <a href="#section1" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">Education</a>
+      <a href="#section2" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">Experience</a>
+      <a href="#section3" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">My Skills</a>
   </div>
 </nav>
 
@@ -324,7 +326,7 @@
 <!-- my skiils progress bar -->
 <section class="w-full md:px-32">
   <div class="wrapper">
-    <div class="card">
+    <div class="card" data-aos="zoom-in">
       <div class="circle">
         <div class="bar"></div>
         <div class="box"><span></span></div>
@@ -355,37 +357,241 @@
       <div class="text">React JS</div>
     </div>
   </div>
-
 </section>
+<!-- end of my skiils progress bar -->
+
+
+<!--project gallery -->
+
+<section id="project" class="flex justify-center">
+  <div class="project-gallery">
+  
+    <div class="gallery-item" style="background-image: url(https://picsum.photos/302/301?random);"> <span style="opacity: 0; margin: 0; padding: 0; width: 100%;">This is a project by MHS Dev Club</span>
+      <div class="overlay">
+        <h2>Project Name</h2>
+        <p>Description of the team project. Describe its functionality, goals for the end user and development process.</p>
+        <a class="overlay-item--button" href="#">Live</a>
+        <a class="overlay-item--button" href="#">Repository</a>
+      </div>
+    </div>
+    
+    <div class="gallery-item" style="background-image: url(https://picsum.photos/302/302?random);"> <span style="opacity: 0; margin: 0; padding: 0; width: 100%;">This is a project by MHS Dev Club</span>
+      <div class="overlay">
+        <h2>Project Name</h2>
+        <p>Description of the team project. Describe its functionality, goals for the end user and development process.</p>
+        <a class="overlay-item--button" href="#">Live</a>
+        <a class="overlay-item--button" href="#">Repository</a>
+      </div>
+    </div>
+    
+    <div class="gallery-item" style="background-image: url(https://picsum.photos/301/301?random);"> <span style="opacity: 0; margin: 0; padding: 0; width: 100%;">This is a project by MHS Dev Club</span>
+      <div class="overlay">
+        <h2>Project Name</h2>
+        <p>Description of the team project. Describe its functionality, goals for the end user and development process.</p>
+        <a class="overlay-item--button" href="#">Live</a>
+        <a class="overlay-item--button" href="//github.com">Repository</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!--end of project gallery -->
+
+ <!-- Contact Section -->
+   <section id="contact" class="text-gray-700 dark:text-gray-300 body-font relative">
+      <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+         <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+            <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Bali,%20Indonesia+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+            <div class="bg-white dark:bg-gray-800 relative flex flex-wrap py-6 rounded shadow-md">
+               <div class="lg:w-1/2 px-6">
+                  <h2 class="title-font font-semibold text-gray-900 dark:text-white tracking-widest text-xs">ADDRESS</h2>
+                  <p class="mt-1">Bali, Indonesia</p>
+               </div>
+               <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                  <h2 class="title-font font-semibold text-gray-900 dark:text-white tracking-widest text-xs">EMAIL</h2>
+                  <a class="text-blue-500 leading-relaxed">febriola@domain.com</a>
+               </div>
+            </div>
+         </div>
+         <div class="lg:w-1/3 md:w-1/2 bg-white dark:bg-gray-800 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+            <h2 class="text-gray-900 dark:text-white text-lg mb-1 font-medium title-font">Contact Me</h2>
+            <p class="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">Feel free to reach out to me for any web development inquiries or collaborations.</p>
+            <div class="relative mb-4">
+               <label for="name" class="leading-7 text-sm text-gray-600 dark:text-gray-300">Name</label>
+               <input type="text" id="name" name="name" class="w-full bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 text-base outline-none text-gray-700 dark:text-gray-300 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+               <label for="email" class="leading-7 text-sm text-gray-600 dark:text-gray-300">Email</label>
+               <input type="email" id="email" name="email" class="w-full bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 text-base outline-none text-gray-700 dark:text-gray-300 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+               <label for="message" class="leading-7 text-sm text-gray-600 dark:text-gray-300">Message</label>
+               <textarea id="message" name="message" class="w-full bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 h-32 text-base outline-none text-gray-700 dark:text-gray-300 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+            <button class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Send</button>
+         </div>
+      </div>
+   </section>
+
+   <!-- cta section -->
+
+   
+<div class="bg-white dark:bg-gray-800 ">
+  <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+      <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
+          <span class="block">
+              Want to be millionaire ?
+          </span>
+          <span class="block text-indigo-500">
+              It&#x27;s today or never.
+          </span>
+      </h2>
+      <p class="text-xl mt-4 max-w-md mx-auto text-gray-400">
+          I had noticed that both in the very poor and very rich extremes of society the mad were often allowed to mingle freely
+      </p>
+      <div class="lg:mt-0 lg:flex-shrink-0">
+          <div class="mt-12 inline-flex rounded-md shadow">
+              <button type="button" class="py-4 px-6  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                  Get started
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+   <!-- end of cta section -->
+  <!--Footer section start-->
+  <footer class="bg-gray-800 pt-24 pb-12">
+    <div class="container mx-auto">
+        <div class="w-full flex flex-wrap">
+            <h2 class="font-bold text-3xl text-white mb-16 w-full text-center">Febiola Angelina</h2>
+            <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3  text-center">
+                <h3 class="font-bold text-2xl mb-3 ">Hubungi Kami</h3>
+                <p>adyatmav@gmail.com</p>
+                <p>Jl Paten Jurang Rt 06 Rw 15</p>
+                <p>Magelang</p>
+            </div>
+            <div class="w-full px-4 mb-12 md:w-1/3  text-center">
+                <h3 class="font-semibold mb-5 text-xl text-white  ">Keterangan Tulisan</h3>
+                <ul>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">programming</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">teknologi</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">gaya hidup</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full px-4 mb-12 md:w-1/3  text-center">
+                <h3 class="font-semibold mb-5 text-xl text-white">Tautan</h3>
+                <ul>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">Tentang saya</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">My Advantages</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-slate-300 inline-block mb-3">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full pt-10 lg:border-t border-slate-700 mx-auto  2xl:w-[80%]  3xl:w-full ">
+            <div class="flex flex-wrap justify-between">
+                <div class="flex items-center  mx-auto lg:mx-0 ">
+                    <!--youtube-->
+                    <a href="https://www.youtube.com/channel/UCo0YZlallTOQTwXwl_vMElA" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-dark hover:bg-slate-300">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                             <title>YouTube</title>
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+
+                    <!--instagram-->
+                    <a href="https://www.instagram.com/vincenciusadyatma" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-dark hover:bg-slate-300">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                            <title>Instagram</title>
+                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                        </svg>
+                    </a>
+
+                     <!--twitter-->
+                     <a href="https://twitter.com/vito_adyatma" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-dark hover:bg-slate-300">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                            <title>Twitter</title>
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+
+                     <!--github-->
+                     <a href="https://github.com/vincensiusadyatma" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-dark hover:bg-slate-300">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                            <title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-xs sm:text-base font-semibold text-white mt-10 mx-auto lg:m-0">
+                    <p>2022 All Rights Reserved by Vincensius Adyatma</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</footer>
+<!--Footer section end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('hamburger-button').addEventListener('click', function() {
-        var menu = document.getElementById('navbar-sticky');
-        menu.classList.toggle('hidden');
-      });
+   document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('hamburger-button').addEventListener('click', function() {
+    var menu = document.getElementById('navbar-sticky');
+    menu.classList.toggle('hidden');
+  });
 
-      document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('dark');
-      });
+  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark');
+  });
 
-      const toggleClassName = "theme-toggle--toggled";
-      const button = document.querySelector("#dark-mode-toggle");
+  const toggleClassName = "theme-toggle--toggled";
+  const button = document.querySelector("#dark-mode-toggle");
 
-      button.addEventListener("click", (e) => {
-        e.currentTarget.classList.toggle(toggleClassName);
-      });
+  button.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle(toggleClassName);
+  });
 
-      const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
-      darkMode.addEventListener("change", (e) => {
-        if (e.matches) {
-          button.classList.add(toggleClassName);
-        } else {
-          button.classList.remove(toggleClassName);
-        }
-      });
-    });
+  const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+  darkMode.addEventListener("change", (e) => {
+    if (e.matches) {
+      button.classList.add(toggleClassName);
+    } else {
+      button.classList.remove(toggleClassName);
+    }
+  });
+});
+
       // Add smooth scrolling to all links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -402,5 +608,10 @@
   </script>
 
   <script src="../src/output/js/circular-progress.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../src/output/js/galery.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
