@@ -4,10 +4,403 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output/css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/output/css/style.css">
+  <title>Febiola Angelina</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+   .wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: -webkit-linear-gradient(left, #53c68a, #8b67c4);
+}
+.wrapper .card{
+  background: #fff;
+    width: calc(25% - 8px);
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+.wrapper .card .circle{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  cursor: default;
+}
+.card .circle .box,
+.card .circle .box span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.card .circle .box{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.2s;
+}
+.card .circle:hover .box{
+  transform: translate(-50%, -50%) scale(0.91);
+}
+.card .circle .box span,
+.wrapper .card .text{
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.circle .box span{
+  font-size: 38px;
+  font-family: sans-serif;
+  font-weight: 600;
+  transform: translate(-45%, -45%);
+  transition: all 0.1s;
+}
+.card .circle:hover .box span{
+  transform: translate(-45%, -45%) scale(1.09);
+}
+.card .text{
+  font-size: 20px;
+  font-weight: 600;
+}
+@media(max-width: 753px){
+  .wrapper{
+    max-width: 700px;
+  }
+  .wrapper .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media(max-width: 505px){
+  .wrapper{
+    max-width: 500px;
+  }
+  .wrapper .card{
+    width: 100%;
+  }
+}
+
+  </style>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="bg-white">
+   <!-- navbar -->
+   <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"> -->
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Febiola Angelina</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button
+          id="dark-mode-toggle"
+          class="theme-toggle"
+          type="button"
+          title="Toggle theme"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle-sr">Toggle theme</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            fill="currentColor"
+            class="theme-toggle__expand"
+            viewBox="0 0 32 32"
+          >
+            <clipPath id="theme-toggle__expand__cutout">
+              <path d="M0-11h25a1 1 0 0017 13v30H0Z" />
+            </clipPath>
+            <g clip-path="url(#theme-toggle__expand__cutout)">
+              <circle cx="16" cy="16" r="8.4" />
+              <path d="M18.3 3.2c0 1.3-1 2.3-2.3 2.3s-2.3-1-2.3-2.3S14.7.9 16 .9s2.3 1 2.3 2.3zm-4.6 25.6c0-1.3 1-2.3 2.3-2.3s2.3 1 2.3 2.3-1 2.3-2.3 2.3-2.3-1-2.3-2.3zm15.1-10.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zM3.2 13.7c1.3 0 2.3 1 2.3 2.3s-1 2.3-2.3 2.3S.9 17.3.9 16s1-2.3 2.3-2.3zm5.8-7C9 7.9 7.9 9 6.7 9S4.4 8 4.4 6.7s1-2.3 2.3-2.3S9 5.4 9 6.7zm16.3 21c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zm2.4-21c0 1.3-1 2.3-2.3 2.3S23 7.9 23 6.7s1-2.3 2.3-2.3 2.4 1 2.4 2.3zM6.7 23C8 23 9 24 9 25.3s-1 2.3-2.3 2.3-2.3-1-2.3-2.3 1-2.3 2.3-2.3z" />
+            </g>
+            <title>Sun for light mode, Moon for dark mode</title>
+          </svg>
+        </button>
+        <button id="hamburger-button" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <ul class="md:mr-24 flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end of navbar -->
+  <!-- Home section start -->
+  <section id="home" class="pt-36 overflow-hidden dark:bg-gray-900">
+    <div class="container mx-auto  dark:bg-gray-900">
+      <div class="flex flex-wrap">
+        <!-- Kolom Teks -->
+        <div class="w-full lg:w-1/2 px-4 self-center text-center lg:text-left lg:pl-20 mb-20 sm:mb-0">
+          <h1 class="font-semibold md:text-xl mb-3 dark:text-white">Hi! I'm<span class="block text-dark font-bold text-3xl sm:text-4xl lg:text-5xl dark:text-white">Febiola Angelina</span></h1>
+          <h2 class="font-medium text-slate-500 mb-5 text-lg lg:text-2xl dark:text-slate-200">Student & <span class="">Web Developer</span></h2>
+          <p class="font-medium text-slate-400 leading-relaxed mb-10 dark:text-slate-300">The struggle you're in today is developing the strength you need for tomorrow</p>
+          <a href="#contact" class="text-white bg-slate-700 px-6 py-3 font-semibold text-base rounded-full border-solid border-2 border-slate-700 hover:border-solid hover:bg-transparent hover:text-dark hover:border-dark hover:border-2 transition-all duration-200 dark:bg-white dark:text-gray-900 dark:border-white dark:hover:bg-transparent dark:hover:text-white">Hubungi Saya</a>
+        </div>
+        <!-- Kolom Gambar -->
+        <div class="w-full lg:w-1/2 px-4 self-end">
+          <div class="mt-24 relative lg:mt-0 lg:right-0"> 
+            <img src="../src/img/febiola.png" alt="Febiola Angelina" class="max-w-[150px] md:max-w-[200px] lg:max-w-[250px] mx-auto brightness-125 z-10 relative">
+            <div class="absolute bottom-0 -translate-x-1/2 left-1/2 md:scale-110 fill-gray-900 dark:fill-slate-800">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M47.4,-51C59.2,-35.6,65.1,-17.8,63.4,-1.7C61.7,14.5,52.6,28.9,40.8,36.6C28.9,44.2,14.5,45,-2,47C-18.4,49,-36.8,52.1,-45.4,44.5C-53.9,36.8,-52.5,18.4,-51.2,1.3C-49.9,-15.8,-48.7,-31.7,-40.2,-47.1C-31.7,-62.4,-15.8,-77.3,1,-78.3C17.8,-79.2,35.6,-66.3,47.4,-51Z" transform="translate(100 100) scale(1.2) rotate(25)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!--Home section end-->
+<!--About section start-->
+<section id="about" class="pt-36 pb-32 2xl:px-12 3xl:px-0 dark:bg-gray-900">
+  <div class="container m-auto">
+      <div class="flex flex-wrap">
+          <div class="w-full px-4 mb-10 lg:w-1/2">
+              <h4 class="font-bold uppercase text-dark text-lg mb-3 dark:text-slate-100">Tentang Saya</h4>
+              <h2 class="font-bold text-slate-700 text-3xl mb-5 lg:text-4xl dark:text-slate-400">Yuk, kenali saya lebih lanjut di website ini</h2>
+              <p class="font-medium text-slate-500 text-base lg:text-lg text-justify">My name is Vincensius Damar Adyatma but you can call me vito. Now on nineteenth of may 2022 when i upload this portfolio, 
+                  i am 18 years old. I was born on April 9, 2004 and have been using computers since childhood. Since I was little, 
+                  I preferred to play games when using the computer and then when I was in junior high school , i started to learn about how computer works until 
+                  learn programming language.
+              </p>
+          </div>
+          <div class="w-full px-4 lg:w-1/2">
+              <h3 class="font-semibold text-slate-700 text-2xl mb-4 lg:text-3xl lg:pt-11  lg:font-bold dark:text-slate-400">Mari berteman dengan saya dan kenali saya lebih lanjut</h3>
+              <p class="font-medium text-slate-500 text-base mb-6 lg:text-lg text-justify mt-6">This website was made with tailwindcss (version 3.0.23) , HTML 5 ,CSS 3 and JAVASCRIPT. This website is made by me who has learn a lot of 
+                  about HTML AND CSS and i learned when I was 16 years old . Pascal was the first programming language that i learned.And after i learned about pascal 
+                  ,finally i can started learned python and html to make website. So thank you for you all who has been see my website .
+              </p>
+
+              <div class="flex items-center ">
+                  <!--youtube-->
+                  <a href="https://www.youtube.com/channel/UCo0YZlallTOQTwXwl_vMElA" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-white hover:bg-dark dark:hover:bg-slate-300  dark:hover:fill-dark">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                           <title>YouTube</title>
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+
+                  <!--instagram-->
+                  <a href="https://www.instagram.com/vincenciusadyatma" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-white hover:bg-dark dark:hover:bg-slate-300  dark:hover:fill-dark">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                          <title>Instagram</title>
+                          <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                      </svg>
+                  </a>
+
+                   <!--twitter-->
+                   <a href="https://twitter.com/vito_adyatma" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-white hover:bg-dark dark:hover:bg-slate-300  dark:hover:fill-dark">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                          <title>Twitter</title>
+                          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                      </svg>
+                  </a>
+
+                   <!--github-->
+                   <a href="https://github.com/vincensiusadyatma" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 fill-slate-300 hover:fill-white hover:bg-dark dark:hover:bg-slate-300  dark:hover:fill-dark">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20">
+                          <title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+         
+
+      </div>
+  </div>
+</section>
+<!--About section end-->
+
+<!-- Track Record Section -->
+<section>
+    <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="w-full bg-gray-100 p-4 shadow-md">
+  <div class="container mx-auto flex justify-around space-x-4">
+      <a href="#section1" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The origin</a>
+      <a href="#section2" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The milestone</a>
+      <a href="#section3" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The acquisitions</a>
+      <a href="#section4" class="text-blue-500 bg-white py-2 px-4 rounded-lg shadow hover:bg-blue-500 hover:text-white transition duration-300">The IPO</a>
+  </div>
+</nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto p-6">
+    <!-- Timeline -->
+    <div class="w-full">
+        <div id="section1" class="relative pl-8 sm:pl-32 py-6 group">
+            <!-- Purple label -->
+            <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The origin</div>
+            <!-- Events List -->
+            <div class="space-y-6">
+                <!-- Event #1 -->
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-4 sm:before:left-0 before:h-full before:w-px before:bg-slate-300 sm:before:ml-20 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-4 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-20 after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2020</time>
+                    <div class="text-xl font-bold text-slate-900 ml-6 sm:ml-0">Acme was founded in Milan, Italy</div>
+                </div>
+                <!-- Content -->
+                <div class="text-slate-500 ml-10 sm:ml-0">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
+            </div>
+        </div>
+
+        <div id="section2" class="relative pl-8 sm:pl-32 py-6 group">
+            <!-- Purple label -->
+            <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The milestone</div>
+            <!-- Events List -->
+            <div class="space-y-6">
+                <!-- Event #1 -->
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-4 sm:before:left-0 before:h-full before:w-px before:bg-slate-300 sm:before:ml-20 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-4 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-20 after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2021</time>
+                    <div class="text-xl font-bold text-slate-900 ml-6 sm:ml-0">Reached 5K customers</div>
+                </div>
+                <!-- Content -->
+                <div class="text-slate-500 ml-10 sm:ml-0">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
+            </div>
+        </div>
+
+        <div id="section3" class="relative pl-8 sm:pl-32 py-6 group">
+            <!-- Purple label -->
+            <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The acquisitions</div>
+            <!-- Events List -->
+            <div class="space-y-6">
+                <!-- Event #1 -->
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-4 sm:before:left-0 before:h-full before:w-px before:bg-slate-300 sm:before:ml-20 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-4 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-20 after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2022</time>
+                    <div class="text-xl font-bold text-slate-900 ml-6 sm:ml-0">Acquired Technology Inc.</div>
+                </div>
+                <!-- Content -->
+                <div class="text-slate-500 ml-10 sm:ml-0">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
+            </div>
+        </div>
+
+        <div id="section4" class="relative pl-8 sm:pl-32 py-6 group">
+            <!-- Purple label -->
+            <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The IPO</div>
+            <!-- Events List -->
+            <div class="space-y-6">
+                <!-- Event #1 -->
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-4 sm:before:left-0 before:h-full before:w-px before:bg-slate-300 sm:before:ml-20 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-4 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-20 after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2023</time>
+                    <div class="text-xl font-bold text-slate-900 ml-6 sm:ml-0">Went public at the NYSE</div>
+                </div>
+                <!-- Content -->
+                <div class="text-slate-500 ml-10 sm:ml-0">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- my skiils progress bar -->
+<section class="w-full md:px-32">
+  <div class="wrapper">
+    <div class="card">
+      <div class="circle">
+        <div class="bar"></div>
+        <div class="box"><span></span></div>
+      </div>
+      <div class="text">HTML & CSS</div>
+    </div>
+    <div class="card js">
+      <div class="circle">
+        <div class="bar"></div>
+        <div class="box"><span></span></div>
+      </div>
+      <div class="text">JavaScript</div>
+    </div>
+  
+     <div class="card node">
+  <div class="circle">
+        <div class="bar"></div>
+        <div class="box"><span></span></div>
+      </div>
+      <div class="text">NodeJs</div>
+    </div>
+  
+    <div class="card react">
+      <div class="circle">
+        <div class="bar"></div>
+        <div class="box"><span></span></div>
+      </div>
+      <div class="text">React JS</div>
+    </div>
+  </div>
+
+</section>
+
+  
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('hamburger-button').addEventListener('click', function() {
+        var menu = document.getElementById('navbar-sticky');
+        menu.classList.toggle('hidden');
+      });
+
+      document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+      });
+
+      const toggleClassName = "theme-toggle--toggled";
+      const button = document.querySelector("#dark-mode-toggle");
+
+      button.addEventListener("click", (e) => {
+        e.currentTarget.classList.toggle(toggleClassName);
+      });
+
+      const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      darkMode.addEventListener("change", (e) => {
+        if (e.matches) {
+          button.classList.add(toggleClassName);
+        } else {
+          button.classList.remove(toggleClassName);
+        }
+      });
+    });
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+  
+  </script>
+
+  <script src="../src/output/js/circular-progress.js"></script>
 </body>
 </html>
